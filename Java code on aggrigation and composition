@@ -1,0 +1,139 @@
+package com.corejava.aggrigation_and_composition;
+class brain
+{
+	String colour;
+	int  size;
+
+	public brain (String colour,int size)
+	{
+		this.colour=colour;
+		this.size=size;
+	}
+
+	public String getcolour ()
+	{
+		return colour;
+	}
+	public int getsize()
+	{
+		return size;
+	}
+}
+
+
+class heart
+{
+	String colour;
+	int weight;
+
+	public heart(String colour,int weight)
+	{
+		this.colour=colour;
+		this.weight=weight;
+	}		
+	public String getcolour()
+	{
+		return colour;
+	}
+	public int getweight ()
+	{
+		return weight;
+	}
+}
+
+
+
+class book
+{
+	String name;
+	String author;
+	int pages;
+
+	public book (String name,String author,int pages)
+	{
+		this.name=name;
+		this.author=author;
+		this.pages=pages;
+	}
+	public String getname()
+	{
+		return name;
+	}
+	public String getauthor ()
+	{
+		return author;
+	}
+	public int getpages()
+	{
+		return pages;
+	}
+}
+
+
+class bike
+{
+	String name;
+	int model;
+	double price;
+	
+	public bike (String name,int model,double price)
+	{
+	this.name=name;
+	this.model=model;
+	this.price=price;
+	}
+	
+	public String getname()
+	{
+		return name;
+	}
+	public int getmodel()
+	{
+		return model;
+	}
+	public double getprice()
+	{
+		return price;
+	}
+}
+
+
+class student
+{
+	brain b=new brain("white",50000);
+	heart h=new heart("red",6);
+
+	public void book(book b)
+	{
+		System.out.println ("book name= "  +b.getname());
+		System.out.println ("book author= " +b.getauthor());
+		System.out.println ("book price= " +b.getpages());
+	}
+	
+	public void bike(bike bk)
+	{
+	System.out.println ("bike name= "  +bk.getname());	
+	System.out.println ("bike model= "  +bk.getmodel());
+	System.out.println ("bike price= "  +bk.getprice());
+	}
+}
+
+package com.corejava.aggrigation_and_composition;
+
+public class main
+{
+	public static void main (String...args)
+	{
+		student s=new student();
+		System.out.println ("brain colour= " +s.b.getcolour());
+		System.out.println ("brain size=  "  +s.b.getsize());
+		
+		System.out.println ("heart colour= " +s.h.getcolour());
+		System.out.println ("heart weight= " +s.h.getweight());
+		
+		bike bk=new bike("pulsar",2020,100000);
+		s.bike(bk);
+		book b=new book ("eca","bakshi",350);
+		s.book(b);
+	}
+}
